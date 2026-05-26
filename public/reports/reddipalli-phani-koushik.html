@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Reddipalli Phani Koushik — NxtWave Interview Report</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #f4f1eb;
+    --card-bg: #faf8f4;
+    --primary: #1a3a52;
+    --accent: #c8873f;
+    --green: #1a5c3a;
+    --green-bg: #e6f4ed;
+    --amber: #7a4f10;
+    --amber-bg: #fef3d8;
+    --red: #8b1c1c;
+    --red-bg: #fde8e8;
+    --border: #d8d0c4;
+    --blue-mid: #1e5a9e;
+    --blue-bg: #f0f7ff;
+    --blue-border: #c0d8f0;
+    --text: #2c2c2c;
+    --muted: #6b6560;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.65; }
+
+  .report-header { background: var(--primary); color: #fff; padding: 52px 40px 44px; text-align: center; }
+  .report-header .eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-bottom: 14px; }
+  .report-header h1 { font-family: 'DM Serif Display', serif; font-size: 42px; font-weight: 400; letter-spacing: -.5px; color: #fff; margin-bottom: 8px; }
+  .report-header .subtitle { font-size: 14px; color: rgba(255,255,255,.6); font-weight: 300; }
+
+  .body-wrap { max-width: 860px; margin: 0 auto; padding: 40px 24px 60px; }
+
+  .section-label { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 40px; }
+  .info-cell { background: var(--card-bg); padding: 18px 22px; }
+  .info-cell .label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
+  .info-cell .value { font-weight: 600; font-size: 15px; color: var(--primary); }
+  .info-cell.full { grid-column: 1 / -1; }
+
+  .badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; font-family: 'DM Mono', monospace; letter-spacing: .04em; }
+  .badge-green { background: var(--green-bg); color: var(--green); }
+  .badge-amber { background: var(--amber-bg); color: var(--amber); }
+  .badge-red   { background: var(--red-bg);   color: var(--red); }
+
+  .journey { display: flex; flex-direction: column; gap: 0; margin-bottom: 40px; }
+  .journey-row { display: flex; align-items: flex-start; gap: 20px; position: relative; padding-bottom: 28px; }
+  .journey-row:last-child { padding-bottom: 0; }
+  .journey-col-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 16px; }
+  .journey-dot { width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; border: 3px solid; box-shadow: 0 0 0 3px var(--bg); }
+  .dot-green { background: var(--green); border-color: var(--green); }
+  .dot-amber { background: var(--amber); border-color: var(--amber); }
+  .journey-line { width: 2px; flex: 1; background: var(--border); min-height: 30px; margin-top: 4px; }
+  .journey-content { flex: 1; }
+  .journey-stage { font-weight: 700; font-size: 14px; color: var(--primary); margin-bottom: 3px; }
+  .journey-result { font-size: 12.5px; font-weight: 600; margin-bottom: 3px; }
+  .journey-result.green { color: var(--green); }
+  .journey-result.amber { color: var(--amber); }
+  .journey-detail { font-size: 12.5px; color: var(--muted); font-family: 'DM Mono', monospace; }
+  .journey-detail a { color: var(--accent); text-decoration: none; }
+  .journey-detail a:hover { text-decoration: underline; }
+
+  .round-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 40px; }
+  .round-header { background: var(--primary); color: #fff; padding: 22px 28px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .round-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  .icon-green { background: var(--green-bg); }
+  .icon-amber { background: var(--amber-bg); }
+  .round-title-group { flex: 1; }
+  .round-name { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; color: #fff; margin-bottom: 3px; }
+  .round-meta { font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(255,255,255,.55); }
+  .round-meta a { color: var(--accent); text-decoration: none; }
+  .round-meta a:hover { text-decoration: underline; }
+  .round-score-box { text-align: right; flex-shrink: 0; }
+  .round-score-num { font-family: 'DM Serif Display', serif; font-size: 36px; color: #fff; line-height: 1; }
+  .round-score-label { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,.5); letter-spacing: .1em; }
+  .round-body { padding: 28px; }
+
+  /* NxtMock score grid */
+  .mock-score-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+  .mock-score-cell { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; text-align: center; }
+  .mock-score-cell .mscore { font-family: 'DM Serif Display', serif; font-size: 26px; color: var(--primary); line-height: 1; margin-bottom: 4px; }
+  .mock-score-cell .mlabel { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+
+  .qa-block { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+  .qa-block:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .qa-block-label { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--primary); font-weight: 500; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); display: inline-block; }
+  .qa-item { margin-bottom: 18px; }
+  .qa-item:last-child { margin-bottom: 0; }
+  .qa-q { font-weight: 600; color: var(--primary); margin-bottom: 7px; font-size: 14px; }
+  .qa-a { color: var(--text); font-size: 14px; line-height: 1.7; margin-bottom: 9px; }
+  .qa-a span { display: block; padding-left: 12px; position: relative; }
+  .qa-a span::before { content: '·'; position: absolute; left: 0; color: var(--accent); }
+  .qa-verdict { display: inline-flex; align-items: center; gap: 6px; padding: 4px 11px; border-radius: 20px; font-size: 12px; font-weight: 600; font-family: 'DM Mono', monospace; }
+  .verdict-good { background: var(--green-bg); color: var(--green); }
+  .verdict-mid  { background: var(--amber-bg); color: var(--amber); }
+  .verdict-bad  { background: var(--red-bg);   color: var(--red); }
+
+  .model-answer { background: var(--blue-bg); border: 1px solid var(--blue-border); border-radius: 8px; padding: 14px 18px; margin-top: 10px; font-size: 13px; line-height: 1.65; }
+  .model-answer .model-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--blue-mid); font-weight: 500; margin-bottom: 7px; }
+  .model-answer p { color: #1a3a6e; }
+  .model-answer span { display: block; padding-left: 14px; position: relative; color: #1a3a6e; }
+  .model-answer span::before { content: '→'; position: absolute; left: 0; color: var(--blue-mid); }
+
+  .round-remarks { background: var(--amber-bg); border-top: 1px solid var(--border); padding: 18px 28px; font-style: italic; font-size: 13.5px; color: var(--amber); }
+  .round-remarks strong { font-style: normal; font-weight: 600; color: var(--primary); }
+
+  /* TR-2 score breakdown grid */
+  .score-breakdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 24px; }
+  .score-cell { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; text-align: center; }
+  .score-cell .snum { font-family: 'DM Serif Display', serif; font-size: 22px; line-height: 1; margin-bottom: 4px; }
+  .score-cell .slabel { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .snum-green { color: var(--green); }
+  .snum-amber { color: var(--amber); }
+  .snum-red   { color: var(--red); }
+
+  .overall-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 40px; }
+  .overall-block { padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .overall-block:last-child { border-bottom: none; }
+  .overall-block p { font-size: 14.5px; line-height: 1.75; color: var(--text); }
+  .title-green { color: var(--green); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 14px; }
+  .title-red   { color: var(--red);   font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 14px; }
+  .title-blue  { color: var(--blue-mid); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 16px; }
+  .strength-list, .improve-list { list-style: none; }
+  .strength-list li, .improve-list li { padding: 8px 0 8px 14px; border-bottom: 1px dashed var(--border); position: relative; font-size: 14px; color: var(--text); }
+  .strength-list li:last-child, .improve-list li:last-child { border-bottom: none; }
+  .strength-list li::before { content: '·'; position: absolute; left: 0; color: var(--green); font-size: 18px; line-height: 1; top: 8px; }
+  .improve-list li::before  { content: '·'; position: absolute; left: 0; color: var(--red);   font-size: 18px; line-height: 1; top: 8px; }
+
+  .week-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .week-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--bg); }
+  .week-card-header { background: var(--primary); padding: 12px 16px; }
+  .week-num { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); }
+  .week-title { font-family: 'DM Serif Display', serif; font-size: 16px; color: #fff; font-weight: 400; }
+  .week-card-body { padding: 14px 16px; }
+  .week-card-body ul { list-style: none; }
+  .week-card-body li { font-size: 13px; color: var(--text); padding: 4px 0 4px 18px; position: relative; line-height: 1.5; }
+  .week-card-body li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 11px; top: 6px; }
+
+  .report-footer { border-top: 1px solid var(--border); padding: 18px 24px; text-align: center; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); max-width: 860px; margin: 0 auto; }
+  a { color: var(--accent); }
+  code { font-family: 'DM Mono', monospace; font-size: 12.5px; background: rgba(0,0,0,.05); padding: 1px 5px; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="report-header">
+  <div class="eyebrow">NxtWave Placement Process · Full Journey Report</div>
+  <h1>Reddipalli Phani Koushik</h1>
+  <div class="subtitle">Software Development — DSA &amp; Full Stack Placement Track</div>
+</div>
+
+<div class="body-wrap">
+
+  <!-- ══ SECTION 01 — CANDIDATE INFO ══ -->
+  <div class="section-label">01 · Candidate Information</div>
+  <div class="info-grid">
+    <div class="info-cell">
+      <div class="label">Candidate Name</div>
+      <div class="value">Reddipalli Phani Koushik</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Offline Assessment Date</div>
+      <div class="value">15 March 2026</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Email</div>
+      <div class="value">phanikoushik2006@gmail.com</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">NxtMock Score</div>
+      <div class="value">7.8 / 10 &nbsp;<span class="badge badge-green" style="font-size:11px;">✓ Cleared</span></div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Eligible Role</div>
+      <div class="value">Full Stack Developer</div>
+    </div>
+    <div class="info-cell full">
+      <div class="label">Final Placement Status</div>
+      <div class="value" style="margin-top:6px;">
+        <span class="badge badge-amber">⚠ Not Cleared — Re-attempt Required</span>
+        &nbsp;<span class="badge badge-green" style="font-size:11px;">Shortlisted for Offline Test · Mar 15</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 02 — JOURNEY ══ -->
+  <div class="section-label">02 · Placement Journey Overview</div>
+  <div class="journey">
+
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Offline Assessment</div>
+        <div class="journey-result green">✓ Cleared</div>
+        <div class="journey-detail">15 Mar 2026</div>
+      </div>
+    </div>
+
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">NxtMock / AI Interview</div>
+        <div class="journey-result green">✓ Cleared · Overall 8.5 / 10 (NxtMock Score: 7.8 / 10)</div>
+        <div class="journey-detail">
+          Problem Solving 8/10 · Coding 7/10 · Debugging 7/10 &nbsp;·&nbsp;
+          <a href="https://nxtinterview.ccbp.in/feedback/ba33cfe6-c895-4ede-86c6-9f984a1ea205/03f319a3-2e73-461a-8357-b1aec90a2931" target="_blank">NxtMock Report ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-green"></div><div class="journey-line"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 1 (TR-1) — DSA &amp; Problem Solving</div>
+        <div class="journey-result green">✓ Cleared · Score 50 / 100 · Medium Hire</div>
+        <div class="journey-detail">11 Apr 2026·
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="journey-row">
+      <div class="journey-col-left"><div class="journey-dot dot-amber"></div></div>
+      <div class="journey-content">
+        <div class="journey-stage">Technical Round 2 (TR-2) — Full Stack Interview</div>
+        <div class="journey-result amber">~ Not Cleared · Score 63 / 100 · Low Hire</div>
+        <div class="journey-detail">19 Apr 2026·
+          
+          &nbsp;· Frontend 35/100 · Backend 55/100 · Overall 63
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ══ SECTION 03 — NXTMOCK ══ -->
+  <div class="section-label">03 · NxtMock / AI Interview — Detailed Evaluation</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon icon-green">🤖</div>
+      <div class="round-title-group">
+        <div class="round-name">NxtMock — AI-Proctored Interview</div>
+        <div class="round-meta">
+          AI Evaluator &nbsp;·&nbsp; 50 Minutes &nbsp;·&nbsp; 3 Questions &nbsp;·&nbsp;
+          <a href="https://nxtinterview.ccbp.in/feedback/ba33cfe6-c895-4ede-86c6-9f984a1ea205/03f319a3-2e73-461a-8357-b1aec90a2931" target="_blank">Full Report ↗</a>
+        </div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#6ee09e;">8.5</div>
+        <div class="round-score-label">/ 10 Overall</div>
+        <div style="margin-top:6px;"><span class="badge badge-green" style="font-size:11px;">✓ Cleared</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+
+      <!-- Score grid -->
+      <div class="mock-score-grid" style="grid-template-columns: repeat(5,1fr);">
+        <div class="mock-score-cell">
+          <div class="mscore" style="color:var(--green);">9</div>
+          <div class="mlabel">Self Intro</div>
+        </div>
+        <div class="mock-score-cell">
+          <div class="mscore" style="color:var(--green);">8</div>
+          <div class="mlabel">Problem Solving</div>
+        </div>
+        <div class="mock-score-cell">
+          <div class="mscore" style="color:var(--amber);">7</div>
+          <div class="mlabel">Coding Skills</div>
+        </div>
+        <div class="mock-score-cell">
+          <div class="mscore" style="color:var(--green);">8</div>
+          <div class="mlabel">Communication</div>
+        </div>
+        <div class="mock-score-cell">
+          <div class="mscore" style="color:var(--amber);">7</div>
+          <div class="mlabel">Debugging</div>
+        </div>
+      </div>
+
+      <!-- Self Intro -->
+      <div class="qa-block">
+        <div class="qa-block-label">Self Introduction — 9 / 10</div>
+        <div class="qa-item">
+          <div class="qa-a">
+            <span>Well-structured introduction covering academic background (BTE CSC AML, SRM IST, 9.06 CGPA), specialization, and projects</span>
+            <span>Effectively highlighted hands-on ML projects: Echo Voice (CNN, TensorFlow.js) and Health Risk Prediction System (SVM, Random Forest)</span>
+            <span>Demonstrated genuine passion for problem-solving and building intelligent systems</span>
+            <span>Balanced personal interests (music, exploring tech, physical activities) with professional background</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Strong — Academic excellence, technical projects, and personal interests well-integrated</span>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">Areas for Improvement (per NxtMock AI)</div>
+          <div class="qa-a">
+            <span>Add project outcome/impact context — e.g., how Echo Voice contributed to environmental awareness</span>
+            <span>Specify career direction more clearly — AI-driven product development, data science, or full-stack engineering</span>
+            <span>Link hobbies to professional growth — how exploring tech content keeps you innovative</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problem Solving -->
+      <div class="qa-block">
+        <div class="qa-block-label">Problem Solving Ability — 8 / 10</div>
+        <div class="qa-item">
+          <div class="qa-q">Problem 1 — HashMap-based Grouping</div>
+          <div class="qa-a">
+            <span>Independently identified the hashmap approach to group numbers by digit sum and track max per group — no hints required</span>
+            <span>Clearly explained why hashmap reduces time complexity from O(n²) to O(n)</span>
+            <span>Strong algorithmic reasoning and data structure selection</span>
+            <span>Gap: Did not mention edge case where no valid pair exists before coding</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Strong — Independent optimal approach identification with complexity reasoning</span>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">Problem 2 — Min-Heap for Kth Smallest Fraction</div>
+          <div class="qa-a">
+            <span>Correctly recognised min-heap as optimal structure for kth smallest fraction problem</span>
+            <span>Provided detailed brute force vs heap comparison including complexity analysis</span>
+            <span>Gap: Heap initialisation explanation could have been more structured</span>
+            <span>Gap: Did not discuss invalid input handling or constraints explicitly</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Strong — Correct optimal structure with brute force comparison</span>
+        </div>
+      </div>
+
+      <!-- Coding -->
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Skills — 7 / 10</div>
+        <div class="qa-item">
+          <div class="qa-a">
+            <span>Problem 1: Hashmap logic implemented correctly with proper dictionary usage and O(n) efficiency; clean code structure</span>
+            <span>Problem 1 gap: Helper function <code>digit_sum</code> was referenced but not defined — would cause a runtime error</span>
+            <span>Problem 2: Heap-based logic implemented consistent with explained approach; demonstrated heapq operations</span>
+            <span>Problem 2 gaps: Misplaced parentheses, <code>heapppop</code> instead of <code>heappop</code>, missing <code>import heapq</code></span>
+            <span>Minor attention-to-detail issues in syntax prevented fully executable code in both problems</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Correct logic in both; syntax errors prevented full execution</span>
+        </div>
+      </div>
+
+      <!-- Debugging -->
+      <div class="qa-block">
+        <div class="qa-block-label">Debugging &amp; Iteration — 7 / 10</div>
+        <div class="qa-item">
+          <div class="qa-a">
+            <span>Problem 1: Detailed dry run with variable state tracking (mp, max_sum) — explained each iteration clearly</span>
+            <span>Problem 2: Comprehensive dry run steps covering heap init, popping, pushing — correct algorithm behaviour</span>
+            <span>Gap: Did not catch the missing <code>digit_sum</code> function during Problem 1 dry run</span>
+            <span>Gap: Problem 2 dry run was conceptually correct but missed syntax issues (incorrect tuple structure)</span>
+            <span>Gap: Could have tracked heap contents explicitly after each pop operation</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Good verbal dry-run skill; syntax-level errors not caught during review</span>
+        </div>
+      </div>
+
+      <!-- Anti-cheat -->
+      <div class="qa-block">
+        <div class="qa-block-label">Integrity Report</div>
+        <div class="qa-item">
+          <div class="qa-a">
+            <span>Tab switches / navigation away: 0 — No violations</span>
+            <span>Multiple faces detected: 0 — No violations</span>
+            <span>Dual monitor detection: 0 — No violations</span>
+            <span>Suspicious browser extensions: 0 — No violations</span>
+            <span>Eyes not aligned with screen: 4 times — Minor; likely natural movement</span>
+            <span>Not facing camera: 4 times — Minor; likely natural movement</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Clean — No malpractice indicators detected</span>
+        </div>
+      </div>
+
+    </div><!-- round-body -->
+    <div class="round-remarks">
+      <strong>NxtMock Summary:</strong> You demonstrated strong algorithmic thinking and communication in the AI mock round — independently identifying optimal approaches and explaining complexity trade-offs. The primary gaps are syntax precision and catching your own errors during dry-run — skills that need deliberate practice before live rounds.
+    </div>
+  </div><!-- end NxtMock card -->
+
+  <!-- ══ SECTION 04 — TR-1 ══ -->
+  <div class="section-label">04 · Technical Round 1 — DSA &amp; Problem Solving</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon icon-green">🟢</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 1 — DSA &amp; Problem Solving</div>
+        <div class="round-meta">11 Apr 2026</div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#6ee09e;">50</div>
+        <div class="round-score-label">/ 100 · Medium Hire</div>
+        <div style="margin-top:6px;"><span class="badge badge-green" style="font-size:11px;">✓ Cleared</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+
+      <div class="qa-block">
+        <div class="qa-block-label">Rapid Fire — DSA Theory</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Average time complexity of Insertion Sort?</div>
+          <div class="qa-a"><span>Answered O(n²) — correct</span></div>
+          <span class="qa-verdict verdict-good">✓ Correct</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Worst case time complexity of Quick Sort — and in what array state?</div>
+          <div class="qa-a">
+            <span>Complexity: O(n²) — correct</span>
+            <span>State: sorted array — correct identification, mechanism not elaborated</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Complexity and state correct; degradation mechanism not explained</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Worst case occurs when pivot is always the smallest/largest element (already sorted or reverse-sorted with naive pivot). Each partition splits into n-1 and 0 sub-problems: T(n) = T(n-1) + O(n) → O(n²). Fix: randomised pivot or median-of-three reduces worst-case probability to near zero.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Binary Search on a reverse-sorted array — which algorithm? Time complexity?</div>
+          <div class="qa-a">
+            <span>Algorithm: Binary Search — correctly chosen</span>
+            <span>Complexity: Initially stated O(1), then O(1) again — arrived at O(log n) only after multiple prompts</span>
+            <span>Could correctly describe the halving mechanism when asked</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Correct algorithm; complexity required significant prompting to reach O(log n)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Binary search divides the search space in half each step: T(n) = T(n/2) + O(1) → O(log n). Best case O(1) occurs only when the target is the very first mid-element — not the average. On a reverse-sorted array, simply reverse the comparison logic (if target &lt; mid, search right; if target &gt; mid, search left).</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Internal working of a HashMap — how does O(1) lookup work?</div>
+          <div class="qa-a">
+            <span>Described key-value pair storage — correct surface understanding</span>
+            <span>Could not explain the hash function → array index → bucket mechanism</span>
+            <span>Could not explain collision handling (chaining / open addressing)</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Surface-level — hash function and bucket internals not explained</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>A hash function maps any key to an array index: <code>index = hash(key) % array_size</code>. Lookup jumps directly to that index → O(1). Collisions (two keys → same index) are handled by chaining (linked list at bucket) or open addressing (probe for next empty slot). Worst case (all keys collide) is O(n); with a good hash function, average is O(1).</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 1 — Top K Frequent Elements</div>
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Problem Solving</div>
+          <div class="qa-a">
+            <span>Initial approach: sorting (O(n log n)) — correct but suboptimal</span>
+            <span>When prompted, independently suggested Min Heap — correct optimal approach</span>
+            <span>Correctly described: maintain heap of size K; pop when size exceeds K</span>
+            <span>Confused the constraint check (heap size vs K) vs element value vs K during dry-run, but self-corrected when pointed out</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Needed guidance to reach optimal; understood once redirected (Rating: 3/5)</span>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>Implemented the min-heap solution correctly — functioned with the given input</span>
+            <span>Solved with some help from the interviewer</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Solved with assistance (Rating: 3/5)</span>
+        </div>
+      </div>
+
+      <div class="qa-block">
+        <div class="qa-block-label">Coding Problem 2 — Max Sum of Distinct Subarrays (Size K)</div>
+        <div class="qa-item">
+          <div class="qa-q">Approach &amp; Problem Solving</div>
+          <div class="qa-a">
+            <span>Understood the problem — identified sliding window as the correct technique</span>
+            <span>Correctly identified need for a set to track distinct elements, left pointer, current sum</span>
+            <span>Did not fully integrate the distinct-elements constraint into the sliding window shrink logic</span>
+            <span>Missed that before adding a new element, you must check it was not already in the current window</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Correct technique identified; distinct constraint not fully integrated (Rating: 3/5)</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Sliding window of size K + HashSet: Expand right pointer — add <code>arr[right]</code> to set and sum. If a duplicate is found OR window size exceeds K, shrink from left (remove <code>arr[left]</code> from set, subtract from sum, advance left). When window size == K and all distinct, update max sum. Time O(n), Space O(K).</span>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">Code Implementation</div>
+          <div class="qa-a">
+            <span>Could not get correct output — result returned zero throughout</span>
+            <span>Bug: method was being called from inside itself rather than from an external driver block</span>
+            <span>Could not self-identify the invocation error within allotted time</span>
+            <span>Verbal logic walkthrough was largely correct</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not solved — critical method invocation bug not self-debugged (Rating: 2/5)</span>
+        </div>
+      </div>
+
+    </div>
+    <div class="round-remarks">
+      <strong>TR-1 Interviewer Feedback:</strong> "Not able to collect thoughts properly and was not able to detect syntax issue in second problem." You should be able to dry-run solutions — it helps in both debugging and explaining. Logic is largely on the right track but independence and debugging precision need work. &nbsp;·&nbsp; <strong>Communication:</strong> 3/5 — Good but needs more structured thought articulation.
+    </div>
+  </div><!-- end TR-1 -->
+
+  <!-- ══ SECTION 05 — TR-2 ══ -->
+  <div class="section-label">05 · Technical Round 2 — Full Stack Interview</div>
+  <div class="round-card">
+    <div class="round-header">
+      <div class="round-icon icon-amber">🟡</div>
+      <div class="round-title-group">
+        <div class="round-name">Technical Round 2 — Full Stack Interview</div>
+        <div class="round-meta">19 Apr 2026</div>
+      </div>
+      <div class="round-score-box">
+        <div class="round-score-num" style="color:#f5c77e;">63</div>
+        <div class="round-score-label">/ 100 · Low Hire</div>
+        <div style="margin-top:6px;"><span class="badge badge-amber" style="font-size:11px;">~ Not Cleared</span></div>
+      </div>
+    </div>
+
+    <div class="round-body">
+
+      <!-- Score breakdown -->
+      <div class="score-breakdown">
+        <div class="score-cell">
+          <div class="snum snum-green">85</div>
+          <div class="slabel">Soft Skills &amp; Comm.</div>
+        </div>
+        <div class="score-cell">
+          <div class="snum snum-amber">75</div>
+          <div class="slabel">Projects</div>
+        </div>
+        <div class="score-cell">
+          <div class="snum snum-red">35</div>
+          <div class="slabel">Frontend Score</div>
+        </div>
+        <div class="score-cell">
+          <div class="snum snum-amber">55</div>
+          <div class="slabel">Backend Score</div>
+        </div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="qa-block">
+        <div class="qa-block-label">Soft Skills &amp; Communication</div>
+        <div class="qa-item">
+          <div class="qa-a">
+            <span>Presentability: Well-groomed and professional appearance noted</span>
+            <span>Communication: Confident and fluent — rated 85/100</span>
+            <span>Spoke clearly, engaged well with the interviewer throughout the session</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Strong — Confident, fluent, well-presented (85/100)</span>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div class="qa-block">
+        <div class="qa-block-label">Projects</div>
+        <div class="qa-item">
+          <div class="qa-q">Echo Voice — CNN-based Waste Classification (SDG 11 &amp; 12)</div>
+          <div class="qa-a">
+            <span>Text, image, and voice input classification system — well-explained problem domain</span>
+            <span>CNN chosen for image classification — ~85% accuracy on custom waste dataset</span>
+            <span>Integrated Web Speech API (text-to-speech and speech-to-text) for south Indian languages</span>
+            <span>Integrated GPT-4 API via Hugging Face and Google Gemini for LLM capabilities</span>
+            <span>Stable Diffusion used for fine-tuned generation; DALL-E kept as fallback — showed research-driven approach</span>
+            <span>Front end built with HTML, CSS, JavaScript, and Tailwind</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Good Understanding — Clear integration explanation, novel multilingual approach (75/100)</span>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">Music Recommendation System (Emotion-based)</div>
+          <div class="qa-a">
+            <span>DeepFace algorithm used for real-time facial emotion detection (happy/sad/angry)</span>
+            <span>Spotify API integrated to recommend music based on detected emotion</span>
+            <span>Shows practical API integration and ML pipeline thinking</span>
+          </div>
+          <span class="qa-verdict verdict-good">✓ Good — Creative project with clear ML + API integration pipeline</span>
+        </div>
+      </div>
+
+      <!-- Frontend -->
+      <div class="qa-block">
+        <div class="qa-block-label">Frontend — HTML, CSS &amp; JavaScript (Score: 35 / 100)</div>
+
+        <div class="qa-item">
+          <div class="qa-q">How to make a responsive webpage for laptop and mobile?</div>
+          <div class="qa-a">
+            <span>Described using a grid/column system (12-column grid) — valid but incomplete</span>
+            <span>Had not heard of media queries when asked — a fundamental CSS responsive tool</span>
+            <span>Grid alone is insufficient for complex responsive layouts; media queries are the industry standard</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Grid approach known; media queries unknown</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Responsive design uses <strong>CSS Media Queries</strong> to apply different styles at different viewport widths: <code>@media (max-width: 768px) &#123; ... &#125;</code>. Combined with: CSS Grid/Flexbox for layout, the viewport meta tag (<code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code>), and relative units (%, vw, rem) instead of fixed px values. Frameworks like Tailwind or Bootstrap provide utility classes (e.g., <code>md:flex</code>) built on the same media query foundation.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What are meta tags? What is an iframe?</div>
+          <div class="qa-a">
+            <span>Meta tags: No knowledge — could not answer</span>
+            <span>Iframe: No knowledge — could not answer</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not answered — both concepts unknown</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>Meta tags</strong> live in the <code>&lt;head&gt;</code> and provide metadata to browsers and search engines: <code>&lt;meta name="description" content="..."&gt;</code> (SEO), <code>&lt;meta charset="UTF-8"&gt;</code> (encoding), <code>&lt;meta name="viewport"&gt;</code> (responsiveness). <strong>iframe</strong>: <code>&lt;iframe src="url"&gt;</code> embeds another HTML document inside the current page — used for maps, YouTube videos, payment widgets. Security note: iframes from untrusted sources can be a XSS risk; use <code>sandbox</code> attribute.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is the DOM?</div>
+          <div class="qa-a">
+            <span>Described as "Documentation Object Module" — incorrect expansion of the acronym</span>
+            <span>Correctly described it as a way to access and manipulate HTML blocks using JavaScript</span>
+            <span>Did not explain the tree structure or that the browser builds it from HTML parsing</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Practical usage correct; incorrect acronym and no tree structure knowledge</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>DOM = <strong>Document Object Model</strong>. When a browser loads HTML, it parses it into a tree of node objects. JS uses this tree to read, modify, add or delete elements: <code>document.getElementById('id')</code>, <code>element.textContent = 'new'</code>, <code>element.addEventListener('click', fn)</code>. The DOM is the live, in-memory representation of the page — changes to it immediately update what the user sees. It is separate from the HTML source file.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is lazy loading?</div>
+          <div class="qa-a">
+            <span>Guessed it was related to showing spinners/loaders while fetching data — partially related but not the definition</span>
+            <span>Did not mention deferred loading of images/resources below the fold</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Incorrect — Confused with loading indicators; lazy loading concept not known</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Lazy loading is a performance technique where resources (images, scripts, components) are only loaded when needed — typically when they are about to enter the viewport — rather than all at once on page load. In HTML: <code>&lt;img loading="lazy" src="..."&gt;</code>. In React: <code>React.lazy(() => import('./Component'))</code> with <code>&lt;Suspense&gt;</code>. Reduces initial page load time and bandwidth usage. The loading spinner you see is a UX pattern — not lazy loading itself.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">API calls from frontend — sync or async? What about payment APIs?</div>
+          <div class="qa-a">
+            <span>General API calls: correctly chose asynchronous using <code>await</code></span>
+            <span>Payment APIs: correctly chose synchronous — showing contextual understanding</span>
+            <span>Did not name specific tools: <code>fetch</code>, <code>axios</code>, <code>async/await</code> syntax</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Sync/async distinction correct; specific JS fetch mechanisms not cited</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">JS: Interpreted vs compiled language? Single-threaded or multi-threaded? Event Loop?</div>
+          <div class="qa-a">
+            <span>Interpreted vs compiled: confused — described interpreted as "shows error only after full run" and compiled as "stops at error" — both reversed</span>
+            <span>Single/multi-threaded: no knowledge</span>
+            <span>Event loop: confused with HTML click/event listeners — the JS concurrency mechanism unknown</span>
+            <span>== vs === (from code snippet): correctly explained — == checks value only, === checks value and type</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Multiple gaps — Interpreted/compiled reversed; single-threaded and event loop unknown</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>Interpreted</strong>: code is executed line-by-line at runtime (no separate compilation step) — errors appear at runtime when that line is reached. <strong>Compiled</strong>: entire source is translated to machine code before running — errors caught at compile time. JS is interpreted (via V8's JIT). <strong>Single-threaded</strong>: JS has one call stack — it can only do one thing at a time. <strong>Event loop</strong>: handles async operations — when async tasks (setTimeout, fetch) complete, their callbacks are placed in the task queue; the event loop picks them up when the call stack is empty.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What is hoisting in JavaScript?</div>
+          <div class="qa-a">
+            <span>Could not recall — stated no knowledge of the concept</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not answered — hoisting unknown</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Hoisting is JS's behaviour of moving declarations to the top of their scope before code execution. <code>var</code> declarations are hoisted and initialised as <code>undefined</code> — so you can reference them before the line they're declared. <code>let</code> and <code>const</code> are hoisted but NOT initialised (Temporal Dead Zone) — accessing them before declaration throws a ReferenceError. Function declarations are fully hoisted (both name and body). Function expressions are not.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Backend -->
+      <div class="qa-block">
+        <div class="qa-block-label">Backend — Databases, SQL &amp; REST APIs (Score: 55 / 100)</div>
+
+        <div class="qa-item">
+          <div class="qa-q">Primary key vs Foreign key — can a foreign key be NULL?</div>
+          <div class="qa-a">
+            <span>Primary key definition: correctly explained — uniquely identifies a row, no nulls, no duplicates</span>
+            <span>Foreign key definition: correctly explained as a reference to another table's primary key</span>
+            <span>Can foreign key be NULL: incorrectly stated NO — corrected by interviewer</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Definitions correct; foreign key nullability incorrectly stated as not allowed</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>A foreign key CAN be NULL — it means "no relationship" for that record (e.g., an employee with no department assigned). A NULL foreign key does not violate referential integrity. However, a NOT NULL constraint can be added to the FK column if you want to mandate the relationship. Primary key can NEVER be NULL.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Database indexing — why create indexes? What slows down?</div>
+          <div class="qa-a">
+            <span>Had no idea on indexing — stated so directly</span>
+            <span>When given a hint (100M row table, slow SELECT), suggested GROUP BY to reduce data — not relevant</span>
+            <span>Understood the concept immediately once the interviewer explained it</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not answered — indexing concept unknown before explanation</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>An index is a data structure (typically B-Tree) built on one or more columns that enables the database to find rows without scanning the entire table. Creates faster SELECT/WHERE/ORDER BY. Trade-off: INSERT, UPDATE, DELETE are slower because the index must also be updated on every write. Best practice: index columns used frequently in WHERE clauses and JOINs; avoid over-indexing write-heavy tables.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Live SQL: Top 5 employees by highest salary; Count employees per department; HAVING clause</div>
+          <div class="qa-a">
+            <span>Top 5 highest salary: <code>SELECT name FROM employee ORDER BY salary DESC LIMIT 5</code> — correct after some iterations</span>
+            <span>Count per department: <code>SELECT department_name, COUNT(name) AS number_of_employees FROM employees GROUP BY department_name</code> — correct</span>
+            <span>HAVING clause: correctly stated <code>HAVING number_of_employees &gt; 50</code> — concept known even if not written</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Correct queries; took iterations to arrive at LIMIT for top-N; HAVING stated verbally but not coded</span>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">What are ACID properties?</div>
+          <div class="qa-a">
+            <span>Attempted expansion: "Atomicity, Consists, the Integrity" — incorrect and incomplete</span>
+            <span>Could not describe what any of the properties mean in practice</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Not answered — ACID properties expansion and meaning incorrect/incomplete</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>A</strong>tomicity: a transaction is all-or-nothing — if any part fails, the whole transaction rolls back. <strong>C</strong>onsistency: a transaction brings the database from one valid state to another — rules/constraints are always satisfied. <strong>I</strong>solation: concurrent transactions don't see each other's intermediate states. <strong>D</strong>urability: once committed, data survives system failures (written to disk). These four properties guarantee reliable database transactions.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">Difference between TRUNCATE and DROP</div>
+          <div class="qa-a">
+            <span>Initially reversed: stated TRUNCATE = delete whole table, DROP = delete specific rows</span>
+            <span>Corrected by interviewer — acknowledged the correct explanation</span>
+          </div>
+          <span class="qa-verdict verdict-bad">✗ Reversed — TRUNCATE and DROP definitions swapped initially</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><code>TRUNCATE</code>: removes ALL rows from a table but keeps the table structure (schema, indexes, constraints). Fast — doesn't log individual row deletions. DDL operation. <code>DROP</code>: removes the entire table — structure, data, indexes, constraints, triggers — permanently. Also DDL. <code>DELETE</code>: DML — removes specific rows (with WHERE), can be rolled back, logs each row deletion.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">REST APIs — PUT vs POST vs PATCH; Pagination</div>
+          <div class="qa-a">
+            <span>PUT = update existing resource — correct</span>
+            <span>POST = create new resource — correct</span>
+            <span>PATCH: confused with <code>fetch()</code> — "by using fetch we can get information" — incorrect</span>
+            <span>Pagination: no knowledge of the concept</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — PUT/POST correct; PATCH confused with fetch; pagination unknown</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span><strong>PATCH</strong>: partial update — only modifies specified fields (unlike PUT which replaces the whole resource). Example: <code>PATCH /users/1</code> body: <code>&#123;"email":"new@mail.com"&#125;</code> — only email is updated. <strong>Pagination</strong>: breaking large API responses into pages to avoid sending millions of records at once. Common patterns: offset-based (<code>?page=2&limit=20</code>) or cursor-based (<code>?after=id_xyz</code>) for large/real-time datasets.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">DSA Coding — Count subarrays with sum equal to K (prefix sum / hashmap approach)</div>
+          <div class="qa-a">
+            <span>Started with brute force (two for loops) — O(n²) — correctly identified this limitation</span>
+            <span>Attempted two-pointer approach — partially worked but has edge cases with negative numbers</span>
+            <span>With hint ("prefix sum"), independently arrived at the hashmap + prefix sum approach</span>
+            <span>Core logic: if <code>current_sum - K</code> exists in the hashmap, a valid subarray ends here</span>
+            <span>Implementation was conceptually correct; print statement for count was missing initially</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Brute force → two-pointer → prefix sum journey; correct concept with minor implementation gap</span>
+          <div class="model-answer">
+            <div class="model-label">📚 What a Good Answer Looks Like</div>
+            <span>Prefix sum + hashmap: initialise <code>freq = &#123;0: 1&#125;</code>, <code>curr_sum = 0</code>, <code>count = 0</code>. For each element: <code>curr_sum += num</code>. If <code>curr_sum - K</code> is in <code>freq</code>, add <code>freq[curr_sum - K]</code> to count. Then <code>freq[curr_sum] = freq.get(curr_sum, 0) + 1</code>. Time O(n), Space O(n). The key insight: <code>curr_sum - prev_sum = K</code> → rearranged as <code>prev_sum = curr_sum - K</code>.</span>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-q">AI Tools usage — GitHub Copilot, Claude, ChatGPT in professional context</div>
+          <div class="qa-a">
+            <span>Uses ChatGPT and Gemini regularly for clearing doubts and getting information</span>
+            <span>Expressed confidence in completing unfamiliar tasks using AI tools</span>
+            <span>Had used Claude/Claude Code once — not deeply familiar yet</span>
+            <span>GitHub branches and pull requests: not familiar — could not explain branching workflow</span>
+          </div>
+          <span class="qa-verdict verdict-mid">~ Partial — Moderately aware of AI tools; GitHub collaborative workflow not known</span>
+        </div>
+      </div>
+
+    </div><!-- round-body -->
+    <div class="round-remarks">
+      <strong>TR-2 Overall Remarks:</strong> "Need to work on problem solving." Strong soft skills and project portfolio (85/100 communication, 75/100 projects). Critical gaps in frontend depth (DOM, lazy loading, event loop, hoisting, media queries) and backend fundamentals (ACID, indexing, TRUNCATE vs DROP). Backend score (55/100) was better than frontend (35/100). Final verdict: Low Hire — shortlisted for Offline Test.
+    </div>
+  </div><!-- end TR-2 -->
+
+  <!-- ══ SECTION 06 — OVERALL ══ -->
+  <div class="section-label">06 · Overall Comments &amp; 1-Month Action Plan</div>
+  <div class="overall-card">
+    <div class="round-header" style="background:#2c3e50;">
+      <div class="round-icon" style="background:var(--amber-bg);">📋</div>
+      <div class="round-title-group">
+        <div class="round-name">Overall Assessment — Full Journey</div>
+        <div class="round-meta">NxtMock 8.5/10 · TR-1 50/100 · TR-2 63/100</div>
+      </div>
+    </div>
+
+    <div class="overall-block">
+      <p>
+        Your placement journey shows a consistent pattern: strong conceptual awareness paired with implementation and depth gaps that appear under live pressure. Your NxtMock score (8.5/10) and strong communication (85/100 in TR-2) confirm that you can think through problems and articulate ideas well when conditions are favourable. Your ML project work — Echo Voice with CNN, Stable Diffusion, and multilingual speech integration — is genuinely impressive for a 3rd-year student and stood out in both rounds. However, across TR-1 and TR-2, the recurring blockers are the same: JavaScript core concepts (event loop, hoisting, lazy loading) are largely unknown, SQL fundamentals (indexing, ACID, TRUNCATE vs DROP) had multiple reversals, and DSA implementation under time pressure produces syntax and invocation errors you can't self-detect. You have been shortlisted for the offline test — treat this period as a focused sprint on the specific gaps identified across all three rounds.
+      </p>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-green">✦ Strengths</div>
+      <ul class="strength-list">
+        <li><strong>Communication &amp; Presentation:</strong> Rated 85/100 in TR-2 — confident, fluent, and well-presented across all rounds. A consistent positive across NxtMock, TR-1, and TR-2.</li>
+        <li><strong>ML Project Depth:</strong> Echo Voice (CNN, 85% accuracy, multilingual speech, LLM integration) and music recommendation (DeepFace + Spotify API) — multi-technology, research-driven projects rare at 3rd year.</li>
+        <li><strong>Algorithmic Awareness:</strong> Independently identified hashmap O(n) approach in NxtMock; recognised min-heap, sliding window, and prefix sum techniques across rounds — shows exposure to advanced patterns.</li>
+        <li><strong>Persistence &amp; Self-Awareness:</strong> Second-attempt interview with specific preparation; openly acknowledges knowledge gaps rather than guessing — a professional trait interviewers value.</li>
+        <li><strong>SQL Partial Strength:</strong> GROUP BY + COUNT + HAVING queries written correctly; ORDER BY DESC LIMIT for top-N arrived at correctly with iterations.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-red">✦ Areas for Improvement</div>
+      <ul class="improve-list">
+        <li><strong>JavaScript Core Concepts (Critical):</strong> Event loop, hoisting, interpreted vs compiled, single-threaded nature — all unknown or confused. These are fundamental to any frontend/full-stack role.</li>
+        <li><strong>CSS Responsive Design (Critical):</strong> Media queries unknown — the primary tool for responsive web pages. Must be studied and practised before the offline test.</li>
+        <li><strong>SQL Fundamentals:</strong> ACID properties, TRUNCATE vs DROP, foreign key nullability, and database indexing — all had incorrect or missing answers. These are standard database questions.</li>
+        <li><strong>DSA Implementation Precision:</strong> Syntax errors (missing imports, typos in method names, method self-invocation) consistently appear. Must practise writing and running code on paper/dry-run before submitting.</li>
+        <li><strong>Backend Depth:</strong> PATCH HTTP method confused with <code>fetch()</code>; pagination unknown; no REST API endpoint experience beyond third-party API integration.</li>
+        <li><strong>GitHub Workflow:</strong> Branches and pull requests unknown — essential for any team-based software development role.</li>
+      </ul>
+    </div>
+
+    <div class="overall-block">
+      <div class="title-blue">✦ 1-Month Action Plan (Pre-Offline Test)</div>
+      <div class="week-grid">
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 01</div>
+            <div class="week-title">JavaScript Deep Dive</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Study event loop, call stack, task queue, and microtask queue with diagrams</li>
+              <li>Learn hoisting: var (undefined) vs let/const (TDZ) vs function declarations</li>
+              <li>Practise == vs === with 10 type-coercion examples</li>
+              <li>Study lazy loading: <code>loading="lazy"</code> for images, React.lazy for components</li>
+              <li>Build a demo: async fetch + loading spinner to distinguish lazy loading from loaders</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 02</div>
+            <div class="week-title">CSS, HTML &amp; SQL Fundamentals</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Study media queries — build a responsive 3-column → 1-column layout</li>
+              <li>Learn meta tags (charset, viewport, description, og:) and iframe usage</li>
+              <li>Memorise DOM tree structure — practice 10 DOM manipulation exercises</li>
+              <li>Study ACID properties with real-world transaction examples</li>
+              <li>Memorise DELETE vs TRUNCATE vs DROP — write a cheat sheet</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 03</div>
+            <div class="week-title">Backend, REST &amp; Git Workflow</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Build a full REST API with GET, POST, PUT, PATCH, DELETE endpoints</li>
+              <li>Implement pagination (offset + cursor-based) in a simple Flask/Express API</li>
+              <li>Study database indexing — create indexes and benchmark query speed</li>
+              <li>Set up a GitHub repo, create branches, open PRs, and merge them</li>
+              <li>Learn PATCH vs PUT with a real-world partial update example</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-card-header">
+            <div class="week-num">WEEK 04</div>
+            <div class="week-title">DSA Practice &amp; Mock Drills</div>
+          </div>
+          <div class="week-card-body">
+            <ul>
+              <li>Solve 10 hashmap + prefix sum problems: LeetCode 560, 325, 523</li>
+              <li>Solve 8 sliding window problems with distinct-element constraints</li>
+              <li>Dry-run every solution on paper before running — catch syntax errors yourself</li>
+              <li>Do 2 timed mock interviews — explain approach out loud before coding</li>
+              <li>Revisit all model answers from TR-1 and TR-2 — answer each cold without notes</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- end overall card -->
+
+</div><!-- body-wrap -->
+
+<div class="report-footer">
+  Report generated by NxtWave Interview Evaluation System
+</div>
+
+</body>
+</html>

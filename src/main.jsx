@@ -1,119 +1,105 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import {
-  BarChart3,
-  BookOpenCheck,
-  CalendarDays,
-  CheckCircle2,
-  ClipboardList,
-  GraduationCap,
-  LineChart,
-  Search,
-  UsersRound,
-} from 'lucide-react';
+import { ArrowLeft, ExternalLink, FileText, GraduationCap } from 'lucide-react';
 import './styles.css';
 
-const cohorts = [
-  { name: 'Grade 8 - Science', completion: 92, trend: '+8%', status: 'On track' },
-  { name: 'Grade 10 - Math', completion: 78, trend: '+4%', status: 'Needs review' },
-  { name: 'Grade 12 - English', completion: 86, trend: '+6%', status: 'On track' },
-];
-
-const tasks = [
-  'Review low-scoring objectives',
-  'Publish weekly guardian summary',
-  'Schedule intervention check-ins',
+const reports = [
+  { name: 'Gopisetti', file: '/reports/gopisetti.html' },
+  { name: 'Kanduri Sai Sri Vidya', file: '/reports/kanduri-sai-sri-vidya.html' },
+  { name: 'Naga Seetha Kota', file: '/reports/naga-seetha-kota.html' },
+  { name: 'Varshni Amrutha' },
+  { name: 'Valeti Bhaskar' },
+  { name: 'Vurubindi Venkata Siva Karthik' },
+  { name: 'Thummu Koushik' },
+  { name: 'M Shreeya Patro' },
+  { name: 'Allada Sai Anoop', file: '/reports/allada-sai-anoop.html' },
+  { name: 'Reddipalli Phani Koushik', file: '/reports/reddipalli-phani-koushik.html' },
+  { name: 'Sandeep', file: '/reports/sandeep.html' },
+  { name: 'Veera Manikandan', file: '/reports/veera-manikandan.html' },
+  { name: 'Tatimakula Divyadeepthi', file: '/reports/tatimakula-divyadeepthi.html' },
+  { name: 'Abhishek Kethepally', file: '/reports/abhishek-kethepally.html' },
+  { name: 'Manasa Jilla', file: '/reports/manasa-jilla.html' },
+  { name: 'Lokesh', file: '/reports/lokesh.html' },
+  { name: 'Krishnavamsi', file: '/reports/krishnavamsi.html' },
 ];
 
 function App() {
+  const [showReports, setShowReports] = useState(false);
+  const [selectedReport, setSelectedReport] = useState(reports.find((report) => report.file));
+
+  if (!showReports) {
+    return (
+      <main className="landing">
+        <section className="hero">
+          <div className="brand">
+            <GraduationCap size={34} aria-hidden="true" />
+            <span>Reports Academy</span>
+          </div>
+          <div className="hero-copy">
+            <p className="eyebrow">Interview report library</p>
+            <h1>Reports Academy</h1>
+            <p className="lede">Open every available student interview report from one static React app.</p>
+            <button className="primary-action" type="button" onClick={() => setShowReports(true)}>
+              <FileText size={20} aria-hidden="true" />
+              Watch reports
+            </button>
+          </div>
+        </section>
+      </main>
+    );
+  }
+
   return (
-    <main className="app-shell">
-      <aside className="sidebar" aria-label="Primary navigation">
-        <div className="brand">
-          <GraduationCap size={30} aria-hidden="true" />
-          <span>Reports Academy</span>
+    <main className="reports-app">
+      <aside className="report-list" aria-label="Interview reports">
+        <div className="list-header">
+          <button className="icon-button" type="button" onClick={() => setShowReports(false)} aria-label="Back">
+            <ArrowLeft size={20} aria-hidden="true" />
+          </button>
+          <div>
+            <p className="eyebrow">Reports</p>
+            <h2>Students</h2>
+          </div>
         </div>
-        <nav>
-          <a className="active" href="#dashboard"><BarChart3 size={18} />Dashboard</a>
-          <a href="#reports"><ClipboardList size={18} />Reports</a>
-          <a href="#classes"><UsersRound size={18} />Classes</a>
-          <a href="#calendar"><CalendarDays size={18} />Calendar</a>
-        </nav>
+
+        <div className="names">
+          {reports.map((report) => (
+            <button
+              className={selectedReport?.name === report.name ? 'name-button active' : 'name-button'}
+              type="button"
+              key={report.name}
+              onClick={() => report.file && setSelectedReport(report)}
+              disabled={!report.file}
+            >
+              <span>{report.name}</span>
+              {!report.file && <small>No file</small>}
+            </button>
+          ))}
+        </div>
       </aside>
 
-      <section className="workspace">
-        <header className="topbar">
+      <section className="viewer">
+        <header className="viewer-header">
           <div>
-            <p className="eyebrow">Academic reporting dashboard</p>
-            <h1>Student progress, ready for action.</h1>
+            <p className="eyebrow">Selected report</p>
+            <h1>{selectedReport?.name}</h1>
           </div>
-          <label className="search">
-            <Search size={18} aria-hidden="true" />
-            <input type="search" placeholder="Search students, classes, reports" />
-          </label>
+          {selectedReport?.file && (
+            <a className="open-link" href={selectedReport.file} target="_blank" rel="noreferrer">
+              <ExternalLink size={18} aria-hidden="true" />
+              Open
+            </a>
+          )}
         </header>
 
-        <section className="metrics" aria-label="Summary metrics">
-          <article>
-            <span>Reports sent</span>
-            <strong>1,284</strong>
-            <small>94% guardian delivery</small>
-          </article>
-          <article>
-            <span>Mastery gain</span>
-            <strong>12.6%</strong>
-            <small>Across active cohorts</small>
-          </article>
-          <article>
-            <span>At-risk students</span>
-            <strong>38</strong>
-            <small>Down 11 this month</small>
-          </article>
-        </section>
-
-        <section className="content-grid">
-          <article className="panel wide">
-            <div className="panel-heading">
-              <div>
-                <p className="eyebrow">Cohort progress</p>
-                <h2>Weekly completion overview</h2>
-              </div>
-              <LineChart size={22} aria-hidden="true" />
-            </div>
-            <div className="cohort-list">
-              {cohorts.map((cohort) => (
-                <div className="cohort-row" key={cohort.name}>
-                  <div>
-                    <strong>{cohort.name}</strong>
-                    <span>{cohort.status}</span>
-                  </div>
-                  <div className="progress" aria-label={`${cohort.completion}% complete`}>
-                    <span style={{ width: `${cohort.completion}%` }} />
-                  </div>
-                  <b>{cohort.trend}</b>
-                </div>
-              ))}
-            </div>
-          </article>
-
-          <article className="panel">
-            <div className="panel-heading">
-              <div>
-                <p className="eyebrow">Next actions</p>
-                <h2>Today</h2>
-              </div>
-              <BookOpenCheck size={22} aria-hidden="true" />
-            </div>
-            <ul className="task-list">
-              {tasks.map((task) => (
-                <li key={task}>
-                  <CheckCircle2 size={18} aria-hidden="true" />
-                  <span>{task}</span>
-                </li>
-              ))}
-            </ul>
-          </article>
-        </section>
+        {selectedReport?.file ? (
+          <iframe className="report-frame" src={selectedReport.file} title={`${selectedReport.name} report`} />
+        ) : (
+          <div className="empty-state">
+            <FileText size={42} aria-hidden="true" />
+            <p>No report file has been added for this student.</p>
+          </div>
+        )}
       </section>
     </main>
   );

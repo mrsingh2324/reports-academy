@@ -1,6 +1,8 @@
 # Reports Academy
 
-A quick React dashboard for tracking student report activity, cohort progress, and next actions.
+A quick React app for viewing static student interview reports.
+
+The app opens to a simple `Watch reports` button, then lists each student and embeds the selected HTML report from `public/reports`.
 
 ## Scripts
 
